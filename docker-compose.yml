@@ -1,0 +1,16 @@
+services:
+  auction_db:
+    container_name: auction_db
+    image: postgres:15-alpine
+    restart: always
+    ports:
+      - 5444:5432
+    environment:
+      POSTGRES_USER: user_admin
+      POSTGRES_PASSWORD: 19851982
+      POSTGRES_DB: auctiondb
+    volumes:
+      - auction_volum:/var/lib/postgresql/data
+
+volumes:
+  auction_volum: {}
