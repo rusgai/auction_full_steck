@@ -11,12 +11,18 @@ func (auction *auctionController) Router(rout *fiber.App) {
 	rout.Get("/api/v1/auction", auction.getAll)
 }
 func (auction *auctionController) getAll(c *fiber.Ctx) error {
-	err := c.JSON(fiber.Map{
-		"status":  200,
-		"massage": "Hemo massage",
-	})
-	if err != nil {
-		return err
-	}
+
+	return nil
+}
+func (auction *auctionController) getItem(c *fiber.Ctx) error {
+	return nil
+}
+func (auction *auctionController) create(c *fiber.Ctx) error {
+	return nil
+}
+func (auction *auctionController) update(c *fiber.Ctx) error {
+	return nil
+}
+func (auction *auctionController) delete(c *fiber.Ctx) error {
 	return nil
 }
