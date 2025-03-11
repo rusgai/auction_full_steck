@@ -1,15 +1,20 @@
 package main
 
-import "net/http"
+import "github.com/gofiber/fiber/v2"
 
 func main() {
-	mux := http.NewServeMux()
+	app := fiber.New()
 
-	resve := http.Server{
-		Addr:    ":8001",
-		Handler: mux,
-	}
-	if err := resve.ListenAndServe(); err != nil {
-		panic(err)
-	}
+	app.Get("/", func(c *fiber.Ctx) error {
+		err := c.JSON(fiber.Map{
+			"status":  200,
+			"message": "Home api massage",
+		})
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+
+	app.Listen(":8001")
 }
