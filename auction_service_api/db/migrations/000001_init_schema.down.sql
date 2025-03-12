@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS "auction";
+DROP TABLE IF EXISTS "item";
+DROP TYPE IF EXISTS "status";

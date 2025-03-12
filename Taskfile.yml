@@ -2,11 +2,13 @@
 
 version: '3'
 
-vars:
-  GREETING: Hello, World!
-
 tasks:
-  default:
+  migrate_up:
     cmds:
-      - echo "{{.GREETING}}"
+      - migrate -database postgres://user_admin:19851982@localhost:5444/auctiondb?sslmode=disable -source file://auction_service_api/db/migrations up
+
+    silent: true
+  migrate_down:
+    cmds:
+      - migrate -database postgres://user_admin:19851982@localhost:5444/auctiondb?sslmode=disable -source file://auction_service_api/db/migrations down
     silent: true

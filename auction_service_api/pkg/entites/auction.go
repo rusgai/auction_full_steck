@@ -1,15 +1,21 @@
 package entites
 
+import (
+	"time"
+
+	"github.com/google/uuid"
+)
+
 type Auction struct {
-	// Id
-	// ReservePrice
-	// Seller
-	// Winner?
-	// SoldAmount?
-	// CurrentHighBid?
-	// CreatedAt
-	// UpdatedAt
-	// AuctionEnd
-	// Status
-	// Item
+	ID             uuid.UUID
+	ReservePrice   int
+	Seller         string
+	Winner         string
+	SoldAmount     int
+	CurrentHighBid int
+	CreatedAt      time.Time
+	UpdatedAt      time.Time
+	AuctionEnd     time.Time
+	Status
+	Item
 }

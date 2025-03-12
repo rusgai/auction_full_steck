@@ -6,5 +6,6 @@ import (
 	_ "github.com/golang-migrate/migrate/v4"
 	_ "github.com/google/uuid"
 	_ "github.com/jmoiron/sqlx"
+	_ "github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
